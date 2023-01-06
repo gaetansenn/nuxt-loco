@@ -41,29 +41,35 @@ export default defineNuxtModule<ModuleOptions>({
     }
 
     nuxt.hook('build:before', async () => {
-      try {
-        let response: any = await new Promise((resolve, reject) => {
-          https.get({
-            protocol: 'https:',
-            hostname: 'localise.biz',
-            path,
-            method: 'GET',
-            headers: {
-              Authorization: `Loco ${options.token}`
-            }
-          }, (res) => {
-            let data = ''
+      let [error, response]: any = await new Promise((resolve) => {
+        https.get({
+          protocol: 'https:',
+          hostname: 'localise.biz',
+          path,
+          method: 'GET',
+          headers: {
+            Authorization: `Loco ${options.token}`
+          }
+        }, (res) => {
+          if (res.statusCode !== 200) return resolve([`http status code is ${res.statusCode}`])
 
-            res.on('data', (chunk) => {
-              data += chunk
-            })
+          let data = ''
 
-            res.on('end', () => {
-              resolve(JSON.parse(data))
-            })
-          }).on('error', reject)
+          res.on('data', (chunk) => {
+            data += chunk
+          })
+
+          res.on('end', () => {
+            resolve([false, JSON.parse(data)])
+          })
+        }).on('error', (error) => {
+          resolve([error])
         })
+      })
 
+      if (error) {
+        logger.error('Unable to fetch translation', error)
+      } else {
         if (options.locale) {
           response = {
             [`${options.locale}`]: response
@@ -82,8 +88,6 @@ export default defineNuxtModule<ModuleOptions>({
         } catch (err) {
           logger.error('Unable to create folder', err)
         }
-      } catch (err) {
-        logger.error('Unable to fetch translation: ', err)
       }
     })
   }
