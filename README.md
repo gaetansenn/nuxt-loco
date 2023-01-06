@@ -1,6 +1,6 @@
 # Nuxt Module
 
-A localise.biz module to synth locale with Nuxt.js
+A [localise.biz](https://localise.biz) module to synth locale with Nuxt.js
 
 ## Development
 
