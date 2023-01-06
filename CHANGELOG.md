@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.1](https://github.com/gaetansenn/nuxt-loco/compare/v1.1.0...v1.1.1) (2023-01-06)
+
+
+### Bug Fixes
+
+* fix error handling ([cc72b52](https://github.com/gaetansenn/nuxt-loco/commit/cc72b52688470b1b0d96a8fdd6ea8a3abf9b5974))
+
 ## 1.1.0 (2023-01-06)
 
 
