@@ -1,6 +1,6 @@
 import { writeFile, mkdir } from 'fs/promises'
+import https from 'https'
 import { defineNuxtModule, createResolver } from '@nuxt/kit'
-import { ofetch } from 'ofetch'
 import consola from 'consola'
 
 const logger = consola.withScope('nuxt:loco')
@@ -42,11 +42,26 @@ export default defineNuxtModule<ModuleOptions>({
 
     nuxt.hook('build:before', async () => {
       try {
-        let response = await ofetch(path, {
-          headers: {
-            Authorization: `Loco ${options.token}`
-          },
-          parseResponse: JSON.parse
+        let response: any = await new Promise((resolve, reject) => {
+          https.get({
+            protocol: 'https:',
+            hostname: 'localise.biz',
+            path,
+            method: 'GET',
+            headers: {
+              Authorization: `Loco ${options.token}`
+            }
+          }, (res) => {
+            let data = ''
+
+            res.on('data', (chunk) => {
+              data += chunk
+            })
+
+            res.on('end', () => {
+              resolve(JSON.parse(data))
+            })
+          }).on('error', reject)
         })
 
         if (options.locale) {
