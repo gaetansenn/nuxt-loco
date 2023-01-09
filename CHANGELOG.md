@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/gaetansenn/nuxt-loco/compare/v1.1.2...v1.2.0) (2023-01-09)
+
+
+### Features
+
+* add doc ([bc925b9](https://github.com/gaetansenn/nuxt-loco/commit/bc925b99a6492a31cfff179a589732843cbea170))
+* remove submodule ([30dac39](https://github.com/gaetansenn/nuxt-loco/commit/30dac39f85f6660d9755d749941382770d719667))
+* restore docs ([09fa5fe](https://github.com/gaetansenn/nuxt-loco/commit/09fa5fe1e9ce52a8df4697fe6d7d79c7e624e31d))
+* update readme ([4eb6481](https://github.com/gaetansenn/nuxt-loco/commit/4eb64819fb58bbab39e07d8b6a9a84876cdb0e26))
+
 ### [1.1.2](https://github.com/gaetansenn/nuxt-loco/compare/v1.1.0...v1.1.2) (2023-01-09)
 
 
