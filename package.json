@@ -23,7 +23,8 @@
   },
   "dependencies": {
     "@nuxt/kit": "^3.0.0",
-    "consola": "^2.15.3"
+    "consola": "^2.15.3",
+    "ofetch": "^1.0.0"
   },
   "devDependencies": {
     "@nuxt/module-builder": "^0.2.1",

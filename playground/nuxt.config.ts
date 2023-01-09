@@ -1,9 +1,9 @@
 import { defineNuxtConfig } from 'nuxt/config'
-import Loco from '..'
+import Module from '..'
 
 export default defineNuxtConfig({
   modules: [
-    Loco,
+    Module,
     '@nuxtjs/i18n'
   ],
   loco: {
@@ -15,6 +15,14 @@ export default defineNuxtConfig({
     vueI18n: {
       legacy: false,
       locale: 'en'
-    }
+    },
+    locales: ['en'].map(locale => ({
+      code: locale,
+      iso: locale,
+      file: `${locale}.json`
+    })),
+    langDir: 'i18n',
+    defaultLocale: 'en',
+    lazy: true
   }
 })
