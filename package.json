@@ -17,6 +17,8 @@
   "scripts": {
     "prepack": "nuxt-module-build",
     "dev": "nuxi dev playground",
+    "dev:docs": "nuxi dev docs",
+    "build:docs": "nuxi build docs",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
     "release": "standard-version && git push --follow-tags && npm publish --access public"
