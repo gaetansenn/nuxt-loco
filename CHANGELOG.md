@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.2](https://github.com/gaetansenn/nuxt-loco/compare/v1.1.0...v1.1.2) (2023-01-09)
+
+
+### Bug Fixes
+
+* fix error handling ([130d617](https://github.com/gaetansenn/nuxt-loco/commit/130d6170ab308824fc3d8adcf37d4aa3caacbf66))
+* reuse ofetch and fix playground ([35a18a8](https://github.com/gaetansenn/nuxt-loco/commit/35a18a88dfe78b45e8547759aae2533cf8651297))
+
 ### [1.1.1](https://github.com/gaetansenn/nuxt-loco/compare/v1.1.0...v1.1.1) (2023-01-06)
 
 
