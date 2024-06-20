@@ -20,6 +20,8 @@ export default defineNuxtModule<ModuleOptions>({
     configKey: 'loco'
   },
   async setup (options, nuxt) {
+    if (options.disabled) { return }
+
     const parameters: any = {}
     const { resolve } = createResolver(nuxt.options.srcDir)
 
